@@ -68,6 +68,20 @@ function cipherLower(arr, shift) {
   }
 }
 
-console.log(caesarCipher("wxyz", 4));
+function analyzeArray(arr) {
+  arr.sort();
+  let res = 0;
 
-export { capitalized, reverse, calculator, caesarCipher };
+  for (let i = 0; i < arr.length; i++) {
+    res += arr[i];
+  }
+
+  return {
+    avg: res / arr.length,
+    min: arr[0],
+    max: arr[arr.length - 1],
+    length: 6,
+  };
+}
+
+export { capitalized, reverse, calculator, caesarCipher, analyzeArray };

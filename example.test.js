@@ -1,4 +1,10 @@
-import { capitalized, reverse, calculator, caesarCipher } from "./example.js";
+import {
+  capitalized,
+  reverse,
+  calculator,
+  caesarCipher,
+  analyzeArray,
+} from "./example.js";
 
 test("Not captialized", () => {
   const str = "hello";
@@ -68,4 +74,13 @@ test("Large Shift doesn't work", () => {
   const shift = 55;
 
   expect(caesarCipher(a, shift)).toMatch("abc");
+});
+
+test("Objects equal", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    avg: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });
